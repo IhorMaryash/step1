@@ -1,0 +1,25 @@
+<p>lesson2 works!</p>
+<h1>Hello: {{ myName }}</h1>
+<!-- <button (click)="showName()">show</button> -->
+<!-- <button (click)="showName('Petro')">show</button> -->
+<!-- <button on-click="showName('Petro')">show</button> -->
+<button (click)="showName($event,'Petro')">show</button>
+<hr>
+<!-- <input type="text" [(ngModel)]="userLogin" name="userLogin">
+<h2>Login: {{ userLogin }}</h2>
+<h3>Login after click: {{login}}</h3>
+<button (click)="checkLogin()">checkLogin</button> -->
+<hr>
+<form >
+    <input [class.danger]="isEmptyLogin " type="text" [(ngModel)]="userLogin" name="userLogin">
+    <input [class.danger]="isEmptyPassword"type="password" [(ngModel)]="userPassword" name="userPassword">
+    <input type="button" value="sign in" (click)="signIn()">
+</form>
+<!-- <h1 [style.color]="statusSignIn ? 'green' : 'red'">{{ greeting }}</h1> -->
+<h1 [class]="statusSignIn ? 'green' : 'red'">{{ greeting }}</h1>
+<hr>
+<ol>
+    <li **ngFor="let user of arrUser">
+        Name: {{user.name}}, Sname: {{user.name}}
+    </li>
+</ol>

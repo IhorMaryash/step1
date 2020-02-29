@@ -1,0 +1,65 @@
+<p>lesson4 works!</p>
+
+<button type="button" class="btn btn-primary" (click)="openModal(userModal)">Create template modal</button>
+ 
+<ng-template #userModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="userLogin">User login</label>
+            <input [(ngModel)]="userLogin" name="userLogin" type="text" id="userLogin" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="userPassword">User password</label>
+            <input [(ngModel)]="userPassword" name="userPassword" type="text" id="userPassword" class="form-control">
+        </div>
+        <button (click)="addUser()" type="button" class="btn btn-success btn-block">Add</button>
+    </form>
+  </div>
+</ng-template>
+
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Status</th>
+        <th>Status message</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{ user.login }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.status }}</td>
+            <td>Some text</td>
+            <td>
+                <button class="btn btn-warning" (click)="editModal(userModal, user)">edit</button>
+            </td>
+
+        </tr>
+    </tbody>   
+</table>
+
+
+<!-- <button type="button" class="btn btn-success" (click)="openModalRegister(userRegister)">register button</button>
+ 
+<ng-template #userRegister>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal Register</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRefRegister.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template> -->

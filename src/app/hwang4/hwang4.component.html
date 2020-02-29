@@ -1,0 +1,52 @@
+<!-- <ng-template > -->
+  <div class="modal-header">
+    <h1 class="modal-title pull-left">Plan your day!</h1>
+    <h2 class="modal-title pull-left">User: Ivan Ivaniv. Count of Task </h2>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <input  type="text" id="" class="form-control">
+      </div>
+      <button type="button" class="btn btn-success">Add</button>
+    </form>
+  </div>
+<!-- </ng-template> -->
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Task</th>
+        <th>Check</th>
+        <th>Done/In Progress</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="">
+            <td></td>
+            <td></td>
+            <td>
+                <!-- <input *ngIf="expression" type="checkbox" name="" id=""> -->
+            </td>
+            <td></td>
+            <td>
+                <button class="btn btn-warning" >edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" [disabled]="">delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="editStatus">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+              <!-- <input type="text" [(ngModel)]="editTask" name="editTask" id="editTask" class="form-control"> -->
+          </td>
+          <td>
+              <!-- <button type="button" class="btn btn-success" (click)="saveEditTask()">save</button> -->
+          </td>
+      </tr>
+    </tbody>  
+</table>
+    

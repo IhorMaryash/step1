@@ -1,0 +1,16 @@
+.green{
+    color: green;
+}
+
+.red{
+    color:red;
+}
+
+.success{
+    border: 1px, solid, green;
+}
+
+.danger{
+    border: 1px, solid, red;
+
+}

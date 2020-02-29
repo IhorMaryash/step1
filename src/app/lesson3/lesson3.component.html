@@ -1,0 +1,40 @@
+<p>lesson3 works!</p>
+<h1>Names</h1>
+<hr>
+<form>
+   <input type="text" [(ngModel)]="newName" name="newName" class="form-control"> 
+   <button type="button" class="btn btn-success" (click)="addName()">add</button>
+</form>
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of arrNames; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{name}}</td>
+            <td>
+                <button class="btn btn-warning" (click)="editName(i)">edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteName(i)" [disabled]="editStatus">delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="editStatus">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="text" [(ngModel)]="editNameStr" name="editNameStr" class="form-control">
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="saveEditName()">save</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

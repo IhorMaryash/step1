@@ -1,0 +1,24 @@
+<p>lesson1 works!</p>
+<h1>Project name: {{title}}</h1>
+<hr>
+<h1>{{'Project name:' + title}}</h1>
+<hr>
+<h1>{{ sayHello() }}</h1>
+<h1>
+    UserLogin{{ user.login }},
+    UserPassword{{ user.password }}
+</h1>
+<hr>
+<a [href]="url">google</a>
+<hr>
+<a bind-href="url">google</a>
+<hr>
+<a [attr.href]="url">google</a>
+<hr>
+<a [attr.href]="url" [textContent]="url"></a>
+<hr>
+<input type="text" [placeholder]="myPL" [class.check]='isCheck'>
+<hr>
+<button (click)="changeInput()">change</button>
+
+

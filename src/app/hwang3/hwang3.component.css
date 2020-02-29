@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    display: flex;
+justify-content: space-between;
+}
+
+.box-form,
+.box-table{
+    width: 49%;
+    padding: 20px 0 0 0;
+}
+
+.box-table{
+    padding-top: 50px;
+}
+
+input{
+    margin-bottom: 20px;
+}
