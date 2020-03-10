@@ -1,6 +1,4 @@
-export interface NUser{
-    id: number;
-    task: string;
-    check: boolean;
-    done: boolean;
+export interface ITask{
+    taskName: string,
+    taskStatus: string
     }

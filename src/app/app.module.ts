@@ -14,6 +14,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { Hwang2Component } from './hwang2/hwang2.component';
 import { Lesson5Component } from './lesson5/lesson5.component';
 import { Hwang4Component } from './hwang4/hwang4.component';
+import { Hwang6Component } from './hwang6/hwang6.component';
+import { SortdataPipe } from './hwang6/pipes/sortdata.pipe';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { Hwang4Component } from './hwang4/hwang4.component';
     Lesson4Component,
     Hwang2Component,
     Lesson5Component,
-    Hwang4Component
+    Hwang4Component,
+    Hwang6Component,
+    SortdataPipe
   ],
   imports: [
     BrowserModule,

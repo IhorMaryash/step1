@@ -1,0 +1,12 @@
+form input[type="button"]:last-child {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    resize: none;
+    padding: 10px;
+    border-radius: 5px;
+}

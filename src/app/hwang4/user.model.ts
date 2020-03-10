@@ -1,11 +1,9 @@
-import { NUser } from "./user.interface";
+import { ITask } from "./user.interface";
 
 
-export class User1 implements NUser {
-    constructor(
-        public id: number,
-        public task: string,
-        public check: boolean,
-        public done: boolean
-      ) {}
+export class MTask implements ITask {
+  constructor(
+    public taskName: string,
+    public taskStatus: string
+  ) { }
 }

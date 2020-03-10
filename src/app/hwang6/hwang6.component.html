@@ -1,0 +1,73 @@
+<div class="modal-header">
+  <h1 class="text-danger">My phone book</h1>
+</div>
+<div class="modal-body">
+  <form>
+    <input type="text" [(ngModel)]="searchData" name="searchData" placeholder="search text goes here" />
+    <button type="button" (click)="openModal(template)" class="btn btn-success">Add phone</button>
+  </form>
+</div>
+
+<table class="table">
+  <thead>
+    <th (click)="range('firstName')">First Name <img [src]="sortStatus ? '../assets/images/downarrow.png' :
+        '../assets/images/uparrow.png'"></th>
+    <th (click)="range('lastName')">Last Name <img [src]="sortStatus ? '../assets/images/downarrow.png' :
+        '../assets/images/uparrow.png'"></th>
+    <th (click)="range('phoneNumber')">Number <img [src]="sortStatus ? '../assets/images/downarrow.png' :
+        '../assets/images/uparrow.png'"></th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of arrUsers | sortdata:key:!sortStatus:searchData; let i = index">
+      <!-- <pre>{{ tasks | json }}</pre> -->
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>
+        <button (click)="editUser(template,i)" class="btn btn-warning">edit</button>
+      </td>
+      <td>
+        <button (click)="deleteUser(i)" class="btn btn-danger">delete</button>
+      </td>
+    </tr>    
+  </tbody>
+</table>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Phone</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="userFirstName">First Name</label>
+        <input [(ngModel)]="userFirstName" name="userFirstName" type="text" id="userFirstName"
+          placeholder="first name goes here" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="userLastName">Last Name</label>
+        <input [(ngModel)]="userLastName" name="userLastName" type="text" id="userLastName"
+          placeholder="last name goes here" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="userPhoneNumber">Phone Number</label>
+        <input [(ngModel)]="userPhoneNumber" name="userPhoneNumber" type="text" id="userPhoneNumber"
+          placeholder="phone number name goes here" class="form-control">
+      </div>
+      <ng-container *ngIf="!visual; else template2">
+        <button (click)="addUser(modalRef.hide)" type="button" 
+        class="btn btn-primary btn-block">Save</button>
+      </ng-container>
+      
+      <ng-template #template2>
+        <button (click)="renameUser(modalRef.hide)" type="button" 
+        class="btn btn-primary btn-block">Save</button>
+      </ng-template>      
+    </form>
+  </div>
+</ng-template>

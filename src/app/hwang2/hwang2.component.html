@@ -1,1 +1,14 @@
-<p>hwang2 works!</p>
+<header>
+    <h1>Angular List of prohibited words:</h1>
+</header>
+<main class="container">
+    <h3>Bad words: <span>{{badWord}}</span></h3>
+    <form name="userform">
+        <input [style.borderColor]="inputStatus ?'red':'initial'"  [(ngModel)]="addWord" name="addWord" type="text" placeholder="word here...">
+        <input class="btn btn-warning" type="button" value="Add" (click)="add()">
+        <input class="btn btn-danger"type="button" value="Reset" (click)="reset()">
+        <textarea [style.borderColor]="textAreaStatus ?'red':'initial'" [(ngModel)]="textArea" name="textArea" placeholder="Please write a text!"></textarea>
+        <input class="btn btn-success" type="button" value="Cenzor" (click)="cenzor()">
+    </form>
+</main>
+<footer></footer>
